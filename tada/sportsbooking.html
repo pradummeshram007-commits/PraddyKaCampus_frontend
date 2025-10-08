@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Sports Booking</title>
+    <link rel="stylesheet" href="sportsbooking.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">⚽ Book Your Court / Ground</h1>
+                <p class="header__subtitle">Reserve your preferred sports facility with ease</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Controls Section -->
+                <section class="controls-section">
+                    <div class="controls-grid">
+                        <!-- Date Picker -->
+                        <div class="control-group">
+                            <label for="date-picker" class="form-label">Select Date</label>
+                            <input type="date" id="date-picker" class="form-control date-input" />
+                        </div>
+
+                        <!-- Sport Filter -->
+                        <div class="control-group">
+                            <label for="sport-filter" class="form-label">Filter by Sport</label>
+                            <select id="sport-filter" class="form-control">
+                                <option value="all">All Sports</option>
+                                <option value="football">Football</option>
+                                <option value="volleyball">Volleyball</option>
+                                <option value="badminton">Badminton</option>
+                                <option value="pool">Pool Table</option>
+                            </select>
+                        </div>
+
+                        <!-- Search Bar -->
+                        <div class="control-group">
+                            <label for="search-input" class="form-label">Search Facilities or Users</label>
+                            <input type="text" id="search-input" class="form-control" placeholder="Search..." />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Booking Grid Section -->
+                <section class="booking-section">
+                    <div class="booking-grid-container">
+                        <table class="booking-grid" id="booking-grid">
+                            <thead>
+                                <tr>
+                                    <th class="time-header">Time Slot</th>
+                                    <th class="facility-header" data-sport="football">Football Ground</th>
+                                    <th class="facility-header" data-sport="volleyball">Volleyball Court</th>
+                                    <th class="facility-header" data-sport="badminton">Badminton Court 1</th>
+                                    <th class="facility-header" data-sport="badminton">Badminton Court 2</th>
+                                    <th class="facility-header" data-sport="pool">Pool Table</th>
+                                </tr>
+                            </thead>
+                            <tbody id="booking-tbody">
+                                <!-- Time slots will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Booking Modal -->
+    <div class="modal hidden" id="booking-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirm Booking</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="booking-details"></p>
+                <div class="form-group">
+                    <label for="user-name" class="form-label">Your Name</label>
+                    <input type="text" id="user-name" class="form-control" placeholder="Enter your name" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="cancel-booking">Cancel</button>
+                <button class="btn btn--primary" id="confirm-booking">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast hidden" id="success-toast">
+        <div class="toast-content">
+            <span class="toast-icon">✅</span>
+            <span class="toast-message">Booking confirmed successfully!</span>
+        </div>
+    </div>
+
+    <script src="sportsbooking.js"></script>
+</body>
+</html>

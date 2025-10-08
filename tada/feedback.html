@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIU Nagpur - Anonymous Feedback Portal</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>SIU Nagpur</h2>
+                <span class="brand-subtitle">Anonymous Feedback Portal</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#submit-feedback" class="nav-link">Submit Feedback</a>
+                <a href="#track-status" class="nav-link">Feedback Status</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+                <a href="#guidelines" class="nav-link">Guidelines</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Assurance Bar -->
+    <div class="privacy-bar">
+        <span>🔒 <strong>100% Anonymous</strong> - No personal data collected | Your privacy is guaranteed</span>
+        <button class="emergency-feedback-btn">🚨 Emergency Feedback</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Your Voice Matters</h1>
+                <p>Share your thoughts anonymously to help us improve campus life at SIU Nagpur</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalFeedback">1247</span>
+                        <span class="stat-label">Total Feedback</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="weeklyFeedback">89</span>
+                        <span class="stat-label">This Week</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">87%</span>
+                        <span class="stat-label">Resolution Rate</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="showFeedbackModal()">Submit Anonymous Feedback</button>
+                    <button class="btn btn-secondary" onclick="scrollToAnalytics()">View Campus Insights</button>
+                </div>
+                <div class="privacy-notice">
+                    <p>🛡️ <strong>Privacy Guaranteed:</strong> No IP logging, No personal data collection, Complete anonymity</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Feedback Categories -->
+        <section id="submit-feedback" class="feedback-categories">
+            <div class="container">
+                <h2 class="section-title">Quick Feedback Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="academic" onclick="openQuickFeedback('academic')">
+                        <div class="category-icon">📚</div>
+                        <h3>Academic Quality</h3>
+                        <p>Teaching methods, course content, assessments</p>
+                        <div class="category-count">23 this week</div>
+                    </div>
+                    <div class="category-card" data-category="infrastructure" onclick="openQuickFeedback('infrastructure')">
+                        <div class="category-icon">🏢</div>
+                        <h3>Infrastructure</h3>
+                        <p>Facilities, classrooms, maintenance</p>
+                        <div class="category-count">18 this week</div>
+                    </div>
+                    <div class="category-card" data-category="food" onclick="openQuickFeedback('food')">
+                        <div class="category-icon">🍽️</div>
+                        <h3>Food Services</h3>
+                        <p>Mess quality, hygiene, variety</p>
+                        <div class="category-count">15 this week</div>
+                    </div>
+                    <div class="category-card" data-category="hostel" onclick="openQuickFeedback('hostel')">
+                        <div class="category-icon">🏠</div>
+                        <h3>Hostel</h3>
+                        <p>Accommodation, facilities, staff</p>
+                        <div class="category-count">10 this week</div>
+                    </div>
+                    <div class="category-card" data-category="it" onclick="openQuickFeedback('it')">
+                        <div class="category-icon">💻</div>
+                        <h3>IT Support</h3>
+                        <p>Wi-Fi, computers, technical help</p>
+                        <div class="category-count">12 this week</div>
+                    </div>
+                    <div class="category-card" data-category="general" onclick="openQuickFeedback('general')">
+                        <div class="category-icon">🌟</div>
+                        <h3>General</h3>
+                        <p>Campus experience, suggestions</p>
+                        <div class="category-count">8 this week</div>
+                    </div>
+                </div>
+                <div class="see-all-categories">
+                    <button class="btn btn-outline" onclick="showFeedbackModal()">View All Categories</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Status Tracking -->
+        <section id="track-status" class="status-section">
+            <div class="container">
+                <h2 class="section-title">Track Your Feedback</h2>
+                <div class="status-tracker">
+                    <div class="tracker-input">
+                        <input type="text" id="trackingId" placeholder="Enter your feedback ID (e.g., FB-2024-001247)" class="tracking-input">
+                        <button class="btn btn-primary" onclick="trackFeedback()">Track Status</button>
+                    </div>
+                    <div class="tracking-result" id="trackingResult" style="display: none;">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                    <div class="status-examples">
+                        <h4>Status Meanings:</h4>
+                        <div class="status-grid">
+                            <div class="status-item">
+                                <span class="status-badge status-submitted">Submitted</span>
+                                <span>Feedback received and logged</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-badge status-review">Under Review</span>
+                                <span>Being evaluated by relevant department</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-badge status-progress">In Progress</span>
+                                <span>Action being taken to address issue</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-badge status-resolved">Resolved</span>
+                                <span>Issue has been addressed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Dashboard -->
+        <section id="analytics" class="analytics-section">
+            <div class="container">
+                <h2 class="section-title">Campus Feedback Insights</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Feedback Distribution</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Response Times</h3>
+                        <div class="response-stats">
+                            <div class="response-stat">
+                                <span class="response-time">3.2 days</span>
+                                <span class="response-label">Average Response Time</span>
+                            </div>
+                            <div class="response-stat">
+                                <span class="response-time">24 hrs</span>
+                                <span class="response-label">Emergency Response</span>
+                            </div>
+                            <div class="response-stat">
+                                <span class="response-time">87%</span>
+                                <span class="response-label">Resolution Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Recent Improvements</h3>
+                        <div class="improvements-list">
+                            <div class="improvement-item">
+                                <span class="improvement-icon">✅</span>
+                                <div class="improvement-text">
+                                    <strong>Wi-Fi Speed Enhanced</strong>
+                                    <p>Campus-wide internet speed improved by 40%</p>
+                                </div>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="improvement-icon">✅</span>
+                                <div class="improvement-text">
+                                    <strong>Mess Menu Expanded</strong>
+                                    <p>Added 15 new dishes based on student suggestions</p>
+                                </div>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="improvement-icon">✅</span>
+                                <div class="improvement-text">
+                                    <strong>Library Hours Extended</strong>
+                                    <p>Now open until 11 PM on weekdays</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidelines Section -->
+        <section id="guidelines" class="guidelines-section">
+            <div class="container">
+                <h2 class="section-title">Feedback Guidelines</h2>
+                <div class="guidelines-grid">
+                    <div class="guideline-card">
+                        <div class="guideline-icon">📝</div>
+                        <h3>Writing Effective Feedback</h3>
+                        <ul class="guideline-list">
+                            <li>Be specific and constructive</li>
+                            <li>Provide context and examples</li>
+                            <li>Suggest solutions when possible</li>
+                            <li>Use respectful language</li>
+                            <li>Include relevant details (time, location, etc.)</li>
+                        </ul>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="guideline-icon">🔒</div>
+                        <h3>Privacy & Anonymity</h3>
+                        <ul class="guideline-list">
+                            <li>No personal data collection</li>
+                            <li>Encrypted submissions</li>
+                            <li>Anonymous ID tracking only</li>
+                            <li>No IP address logging</li>
+                            <li>Regular data purging</li>
+                        </ul>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="guideline-icon">⏱️</div>
+                        <h3>Response Timeframes</h3>
+                        <ul class="guideline-list">
+                            <li>Standard: 2-5 business days</li>
+                            <li>Emergency: Within 24 hours</li>
+                            <li>Status updates provided regularly</li>
+                            <li>Follow-up for complex issues</li>
+                            <li>Resolution confirmation</li>
+                        </ul>
+                    </div>
+                    <div class="guideline-card">
+                        <div class="guideline-icon">🚨</div>
+                        <h3>Emergency Feedback</h3>
+                        <ul class="guideline-list">
+                            <li>Safety and security concerns</li>
+                            <li>Health emergencies</li>
+                            <li>Critical infrastructure issues</li>
+                            <li>Harassment or discrimination</li>
+                            <li>Immediate attention required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Feedback Support</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Feedback Coordinator</h3>
+                        <p>📧 feedback.nagpur@symbiosis.ac.in</p>
+                        <p>📞 0712 6192500</p>
+                        <p>⏰ Response Time: 2-5 business days</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Emergency Support</h3>
+                        <p>🚨 Campus Security: 0712 6192501</p>
+                        <p>🏥 Medical Emergency: 108</p>
+                        <p>⏰ Available 24/7</p>
+                    </div>
+                </div>
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">How anonymous is my feedback?</div>
+                            <div class="faq-answer">Completely anonymous. We don't collect names, emails, or any personal information. Only anonymous tracking IDs are generated.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">How long does it take to get a response?</div>
+                            <div class="faq-answer">Standard feedback receives a response within 2-5 business days. Emergency feedback is addressed within 24 hours.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Can I follow up on my feedback?</div>
+                            <div class="faq-answer">Yes, use your anonymous tracking ID to check the status and any updates on your feedback.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Anonymous Feedback Modal -->
+    <div id="feedbackModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Submit Anonymous Feedback</h2>
+                <button class="close-btn" onclick="closeFeedbackModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="privacy-notice">
+                    <p>🔒 <strong>Your feedback is completely anonymous.</strong> No personal information is collected or stored.</p>
+                </div>
+                <form id="feedbackForm" class="feedback-form">
+                    <div class="form-group">
+                        <label for="category">Feedback Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category...</option>
+                            <option value="academic">📚 Academic Quality & Teaching</option>
+                            <option value="infrastructure">🏢 Infrastructure & Facilities</option>
+                            <option value="food">🍽️ Food & Dining Services</option>
+                            <option value="hostel">🏠 Hostel & Accommodation</option>
+                            <option value="admin">📋 Administrative Services</option>
+                            <option value="library">📖 Library & Digital Resources</option>
+                            <option value="sports">⚽ Sports & Recreation</option>
+                            <option value="medical">🏥 Medical & Health Services</option>
+                            <option value="it">💻 IT & Technical Support</option>
+                            <option value="safety">🛡️ Campus Safety & Security</option>
+                            <option value="general">🌟 General Campus Experience</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="subcategoryGroup" style="display: none;">
+                        <label for="subcategory">Subcategory (Optional)</label>
+                        <select id="subcategory" name="subcategory">
+                            <!-- Dynamic options will be loaded -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Overall Rating</label>
+                        <div class="rating-container">
+                            <div class="star-rating" data-rating="overall">
+                                <span class="star" data-value="1">⭐</span>
+                                <span class="star" data-value="2">⭐</span>
+                                <span class="star" data-value="3">⭐</span>
+                                <span class="star" data-value="4">⭐</span>
+                                <span class="star" data-value="5">⭐</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback">Detailed Feedback *</label>
+                        <textarea id="feedback" name="feedback" rows="5" placeholder="Share your thoughts, suggestions, or concerns. Be specific to help us address your feedback effectively." required></textarea>
+                        <div class="character-count">
+                            <span id="charCount">0</span> / 1000 characters
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority Level</label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low - General suggestion or minor issue</option>
+                            <option value="medium">Medium - Important but not urgent</option>
+                            <option value="high">High - Needs attention soon</option>
+                            <option value="critical">Critical - Safety or emergency concern</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit Anonymous Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-popup hidden">
+        <div class="success-content">
+            <div class="success-icon">✅</div>
+            <h3>Feedback Submitted Successfully!</h3>
+            <p>Your anonymous feedback ID is: <strong id="feedbackId">FB-2024-001248</strong></p>
+            <p>Use this ID to track your feedback status.</p>
+            <button class="btn btn-primary" onclick="closeSuccessMessage()">Got it</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="feedback.js"></script>
+</body>
+</html>

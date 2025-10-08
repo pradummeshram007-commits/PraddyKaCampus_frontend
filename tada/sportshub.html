@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏟️ Campus Sports Hub</title>
+    <link rel="stylesheet" href="sportshub.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header__title">🏟️ Campus Sports Hub</h1>
+            <p class="header__subtitle">Create and join sports activities on campus</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Create Poll Section -->
+            <section class="create-poll-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>Create a Poll</h2>
+                        <p>Start a new sports activity</p>
+                    </div>
+                    <div class="card__body">
+                        <form id="createPollForm" class="create-poll-form">
+                            <div class="form-group">
+                                <label for="sport" class="form-label">🎮 Choose Sport</label>
+                                <select id="sport" name="sport" class="form-control" required>
+                                    <option value="">Select a sport</option>
+                                    <option value="Football">⚽ Football</option>
+                                    <option value="Volleyball">🏐 Volleyball</option>
+                                    <option value="Basketball">🏀 Basketball</option>
+                                    <option value="Pool">🎱 Pool</option>
+                                    <option value="Table Tennis">🏓 Table Tennis</option>
+                                    <option value="Badminton">🏸 Badminton</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date" class="form-label">📅 Date</label>
+                                    <input type="date" id="date" name="date" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time" class="form-label">🕐 Time</label>
+                                    <input type="time" id="time" name="time" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location" class="form-label">📍 Location</label>
+                                <select id="location" name="location" class="form-control" required>
+                                    <option value="">Select location</option>
+                                    <option value="Sports Complex Ground A">Sports Complex Ground A</option>
+                                    <option value="Sports Complex Ground B">Sports Complex Ground B</option>
+                                    <option value="Gymnasium Court 1">Gymnasium Court 1</option>
+                                    <option value="Gymnasium Court 2">Gymnasium Court 2</option>
+                                    <option value="Pool Hall">Pool Hall</option>
+                                    <option value="Indoor Badminton Court">Indoor Badminton Court</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="playersNeeded" class="form-label">👥 Players Needed</label>
+                                <input type="number" id="playersNeeded" name="playersNeeded" class="form-control" min="2" max="20" value="8" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description" class="form-label">📝 Description</label>
+                                <textarea id="description" name="description" class="form-control" rows="3" placeholder="Let's play 5v5 football today evening" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tags" class="form-label">🏷️ Tags</label>
+                                <select id="tags" name="tags" class="form-control" multiple>
+                                    <option value="Open for All">Open for All</option>
+                                    <option value="Boys Only">Boys Only</option>
+                                    <option value="Girls Only">Girls Only</option>
+                                    <option value="Casual Game">Casual Game</option>
+                                    <option value="Tournament">Tournament</option>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Advanced">Advanced</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--full-width">Create Poll</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Polls Section -->
+            <section class="active-polls-section">
+                <div class="active-polls-header">
+                    <h2>Active Polls</h2>
+                    <p>Join ongoing sports activities</p>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-sport="all">All Sports</button>
+                    <button class="filter-btn" data-sport="Football">Football</button>
+                    <button class="filter-btn" data-sport="Basketball">Basketball</button>
+                    <button class="filter-btn" data-sport="Badminton">Badminton</button>
+                    <button class="filter-btn" data-sport="Volleyball">Volleyball</button>
+                    <button class="filter-btn" data-sport="Table Tennis">Table Tennis</button>
+                    <button class="filter-btn" data-sport="Pool">Pool</button>
+                </div>
+
+                <!-- Polls Grid -->
+                <div id="pollsGrid" class="polls-grid">
+                    <!-- Sample polls will be inserted here by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Success Alert Modal -->
+    <div id="successAlert" class="alert-modal hidden">
+        <div class="alert-content">
+            <div class="alert-icon">✅</div>
+            <h3>Poll Created Successfully!</h3>
+            <p>Your sports activity has been posted and is now visible to other students.</p>
+            <button id="closeAlert" class="btn btn--primary">Great!</button>
+        </div>
+    </div>
+
+    <script src="sportshub.js"></script>
+</body>
+</html>

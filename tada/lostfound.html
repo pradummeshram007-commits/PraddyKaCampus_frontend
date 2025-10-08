@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind - Ultra-Luxury Lost & Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lostfound.css">
+</head>
+<body>
+    <!-- Floating Particles Background -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>CampusFind</h1>
+            </div>
+            <div class="nav-right">
+                <button class="profile-btn" id="profileBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden" id="mobileMenu">
+        <div class="menu-content">
+            <a href="#home" class="menu-item">Home</a>
+            <a href="#browse" class="menu-item">Browse Items</a>
+            <a href="#report" class="menu-item">Report Lost</a>
+            <a href="#about" class="menu-item">About</a>
+            <a href="#contact" class="menu-item">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">CampusFind</h1>
+                <p class="hero-tagline">Luxury Lost & Found Experience</p>
+            </div>
+            
+            <div class="hero-actions">
+                <button class="btn btn-primary" id="reportLostBtn">Report Lost Item</button>
+                <button class="btn btn-secondary" id="browseFoundBtn">Browse Found Items</button>
+            </div>
+            
+            <div class="search-hero">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for your lost item..." id="heroSearch" class="search-input">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-filters">
+                    <button class="filter-pill active" data-category="all">All Items</button>
+                    <button class="filter-pill" data-category="Electronics">Electronics</button>
+                    <button class="filter-pill" data-category="Books">Books</button>
+                    <button class="filter-pill" data-category="Accessories">Accessories</button>
+                    <button class="filter-pill" data-category="Clothing">Clothing</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="categories-section" id="browse">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Items Grid -->
+    <section class="items-section">
+        <div class="container">
+            <div class="items-header">
+                <h2 class="section-title">Found Items</h2>
+                <div class="items-count" id="itemsCount">Loading items...</div>
+            </div>
+            <div class="items-grid" id="itemsGrid">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Lost Item Modal -->
+    <div class="modal hidden" id="reportModal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Report Lost Item</h3>
+                <button class="modal-close" id="closeReportModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="reportForm" class="report-form">
+                    <div class="form-group">
+                        <label class="form-label">Item Name *</label>
+                        <input type="text" class="form-control" id="itemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Category *</label>
+                        <select class="form-control" id="itemCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Books">Books</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Keys">Keys</option>
+                            <option value="Jewelry">Jewelry</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description *</label>
+                        <textarea class="form-control" id="itemDescription" rows="4" required placeholder="Please provide detailed description including color, brand, distinctive features..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Seen Location *</label>
+                        <input type="text" class="form-control" id="itemLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Date Lost *</label>
+                        <input type="date" class="form-control" id="itemDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Your Contact Email *</label>
+                        <input type="email" class="form-control" id="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="contactPhone">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelReport">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit Report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Detail Modal -->
+    <div class="modal hidden" id="itemModal">
+        <div class="modal-backdrop" id="itemModalBackdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="itemModalTitle">Item Details</h3>
+                <button class="modal-close" id="closeItemModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="item-detail-content" id="itemDetailContent">
+                    <!-- Item details will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal hidden" id="loginModal">
+        <div class="modal-backdrop" id="loginModalBackdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Welcome Back</h3>
+                <button class="modal-close" id="closeLoginModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-full-width">Sign In</button>
+                    </div>
+                    <div class="auth-switch">
+                        <p>Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast hidden" id="successToast">
+        <div class="toast-content">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20,6 9,17 4,12"></polyline>
+            </svg>
+            <span id="toastMessage">Success!</span>
+        </div>
+    </div>
+
+    <script src="lostfound.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIU Nagpur Emergency SOS</title>
+    <link rel="stylesheet" href="sos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <i class="fas fa-shield-alt"></i>
+                    SIU Nagpur Campus Emergency SOS
+                </h1>
+                <div class="datetime" id="currentDateTime"></div>
+            </div>
+        </header>
+
+        <!-- Quick Emergency Numbers -->
+        <section class="emergency-quick">
+            <h2 class="section-title">Emergency Hotlines</h2>
+            <div class="quick-dial">
+                <a href="tel:112" class="emergency-btn primary">
+                    <i class="fas fa-phone"></i>
+                    <span>112</span>
+                    <small>Universal Emergency</small>
+                </a>
+                <a href="tel:100" class="emergency-btn">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>100</span>
+                    <small>Police</small>
+                </a>
+                <a href="tel:101" class="emergency-btn">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <span>101</span>
+                    <small>Fire</small>
+                </a>
+                <a href="tel:102" class="emergency-btn">
+                    <i class="fas fa-ambulance"></i>
+                    <span>102</span>
+                    <small>Ambulance</small>
+                </a>
+                <a href="tel:108" class="emergency-btn">
+                    <i class="fas fa-truck-medical"></i>
+                    <span>108</span>
+                    <small>State Ambulance</small>
+                </a>
+            </div>
+        </section>
+
+        <!-- Campus Information -->
+        <section class="campus-alert">
+            <div class="alert-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Campus Address for Emergency Services</h3>
+                <p><strong>Symbiosis International University - Nagpur Campus</strong></p>
+                <p>Mouza - Wathoda, Nagpur - 440008, Maharashtra, India</p>
+                <p><strong>Coordinates:</strong> 79°16'23"E, 21°12'59"N</p>
+                <p><strong>Landmark:</strong> Near Wathoda Layout, Bhandewadi</p>
+            </div>
+        </section>
+
+        <!-- Main Emergency Services -->
+        <div class="services-grid">
+            <!-- Hospitals -->
+            <section class="service-section">
+                <h2 class="section-title">
+                    <i class="fas fa-hospital"></i>
+                    Nearest Hospitals
+                </h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>CARE Hospitals, Nagpur</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="address">3, Farmland Rd, Panchsheel Square, Nagpur - 440012</p>
+                        <div class="contact-info">
+                            <a href="tel:+914068106589" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                +91 40 6810 6589
+                            </a>
+                            <span class="distance">~12 km from campus</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6 Rating</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Shri Radhakrishna Hospital</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="address">74, Central Ave, Transport Nagar, Nagpur - 440008</p>
+                        <div class="contact-info">
+                            <a href="tel:+918999768736" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                +91 89997 68736
+                            </a>
+                            <span class="distance">~8 km from campus (Closest)</span>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6 Rating</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Lata Mangeshkar Hospital</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="address">5-YMCA Complex, Maharaj Bagh Road, Sitabuldi, Nagpur - 440001</p>
+                        <div class="contact-info">
+                            <a href="tel:07122530347" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                0712-2530347
+                            </a>
+                            <span class="distance">~15 km from campus</span>
+                        </div>
+                        <div class="services">Emergency • Trauma • ICU</div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Government Medical College Hospital</h3>
+                            <span class="status-govt">Government</span>
+                        </div>
+                        <p class="address">Medical Square, Nagpur - 440009</p>
+                        <div class="contact-info">
+                            <a href="tel:07122701642" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                0712-2701642
+                            </a>
+                            <span class="distance">~12 km from campus</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Police Stations -->
+            <section class="service-section">
+                <h2 class="section-title">
+                    <i class="fas fa-shield-halved"></i>
+                    Police Stations
+                </h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Shri Krushna Nagar Police Station</h3>
+                            <span class="status-nearest">Nearest</span>
+                        </div>
+                        <p class="address">Wathoda Road, Shrikrishna Nagar, Nagpur - 440009</p>
+                        <div class="contact-info">
+                            <a href="tel:+917122712190" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                +91 712 271 2190
+                            </a>
+                            <span class="distance">~3 km from campus</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Kharbi Police Station</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="address">Kharbi Gramin, Nagpur - 440008</p>
+                        <div class="contact-info">
+                            <a href="tel:100" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                Contact via 100 or 112
+                            </a>
+                            <span class="distance">~5 km from campus</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ambulance Services -->
+            <section class="service-section">
+                <h2 class="section-title">
+                    <i class="fas fa-ambulance"></i>
+                    Ambulance Services
+                </h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>RED Ambulance Service</h3>
+                            <span class="status-fast">< 3 min response</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:18001219119111" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                1800 121 911 911
+                            </a>
+                        </div>
+                        <div class="services">Basic Life Support • Advanced Life Support • ICU on wheels</div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>GoAid Ambulance</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:8008280020" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                800 828 0020
+                            </a>
+                        </div>
+                        <div class="services">Normal • ICU • Oxygen • Air Ambulance</div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Government Ambulance</h3>
+                            <span class="status-free">Free Service</span>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:102" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                102 / 108
+                            </a>
+                        </div>
+                        <div class="services">Free Government Emergency Service</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Campus Services -->
+            <section class="service-section">
+                <h2 class="section-title">
+                    <i class="fas fa-school"></i>
+                    Campus Services
+                </h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>SIU Campus Security</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="address">Campus Main Reception</p>
+                        <div class="contact-info">
+                            <a href="tel:07126192345" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                0712-6192345
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>SIBM Nagpur</h3>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:07126192403" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                0712 619 2403
+                            </a>
+                            <a href="tel:9765223170" class="contact-btn">
+                                <i class="fas fa-mobile-alt"></i>
+                                9765223170
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>SIT Nagpur</h3>
+                        </div>
+                        <div class="contact-info">
+                            <a href="tel:7126192370" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                712 619 2370
+                            </a>
+                            <a href="tel:+919823356929" class="contact-btn">
+                                <i class="fas fa-mobile-alt"></i>
+                                +91 98233 56929
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Student Support -->
+            <section class="service-section">
+                <h2 class="section-title">
+                    <i class="fas fa-hands-helping"></i>
+                    Student Support Services
+                </h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>KIRAN Mental Health Helpline</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="description">National mental health support</p>
+                        <div class="contact-info">
+                            <a href="tel:18005990019" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                1800-599-0019
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Tele MANAS</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="description">Mental health counseling & support</p>
+                        <div class="contact-info">
+                            <a href="tel:14416" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                14416
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Women Helpline</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="description">Women's safety & support</p>
+                        <div class="contact-info">
+                            <a href="tel:1091" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                1091
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Child Helpline</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="description">For students under 18</p>
+                        <div class="contact-info">
+                            <a href="tel:1098" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                1098
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Student Counseling (Local)</h3>
+                            <span class="status-hours">Mon-Sat: 1PM-8PM</span>
+                        </div>
+                        <p class="description">Dr. Ramakant Gadiwan - Psychologist</p>
+                        <div class="contact-info">
+                            <a href="tel:+919158585556" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                +91 91585 85556
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fire Services -->
+            <section class="service-section">
+                <h2 class="section-title">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    Fire Services
+                </h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <div class="card-header">
+                            <h3>Nagpur Fire Brigade</h3>
+                            <span class="status-24-7">24/7</span>
+                        </div>
+                        <p class="address">NMC Building, Chindwada Rd, Liberty Chowk, Nagpur - 440001</p>
+                        <div class="contact-info">
+                            <a href="tel:+917122557861" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                                +91 712 255 7861
+                            </a>
+                            <a href="tel:101" class="contact-btn emergency">
+                                <i class="fas fa-fire-extinguisher"></i>
+                                101 (Emergency)
+                            </a>
+                            <span class="distance">~15 km from campus</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Quick Reference -->
+        <section class="quick-reference">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                Quick Reference
+            </h2>
+            <div class="reference-grid">
+                <div class="reference-card">
+                    <h3><i class="fas fa-train"></i> Nearest Railway Station</h3>
+                    <p>Nagpur Junction (10 km)</p>
+                </div>
+                <div class="reference-card">
+                    <h3><i class="fas fa-plane"></i> Nearest Airport</h3>
+                    <p>Sonegaon-Nagpur Airport (17 km)</p>
+                </div>
+                <div class="reference-card">
+                    <h3><i class="fas fa-hashtag"></i> Area Details</h3>
+                    <p>Area Code: 0712<br>Pincode: 440008</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Stay Safe • Stay Connected • SIU Nagpur Campus Emergency Services</p>
+            <p class="footer-note">In case of emergency, always dial 112 for immediate assistance</p>
+        </footer>
+    </div>
+
+    <script src="sos.js"></script>
+</body>
+</html>
